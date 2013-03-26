@@ -43,4 +43,16 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 let g:syntastic_enable_signs=1
 let g:syntastic_disabled_filetypes = ['cpp']
 
+" Statusline helper
+if has("eval")
+function! SL(function)
+  if exists('*'.a:function)
+    return call(a:function,[])
+  else
+    return ''
+  endif
+endfunction
+endif
+
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{SL('fugitive#statusline')}%{SL('SyntasticStatuslineFlag')}%*%=%-14.(%l,%c%V%)\ %P
 
