@@ -16,7 +16,7 @@ highlight clear SignColumn
 
 if has("gui_running")
   set go-=T
-  set guifont=Monaco:h14
+  set guifont=Monaco\ for\ Powerline:h14
   set noballooneval
 else
   set mouse=a
@@ -28,7 +28,7 @@ let NERDTreeDirArrows=1
 let NERDTreeMinimalUI=1
 let NERDTreeIgnore=['\.pyc$', 'CVS', '\~$']
 let NERDTreeHijackNetrw=1
-:let NERDTreeQuitOnOpen = 0
+let NERDTreeQuitOnOpen = 0
 
 "Autocomplete settings
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -64,5 +64,6 @@ nmap <c-l> <c-w>l<c-w>
 nmap <c-j> <c-w>j<c-w>
 nmap <c-k> <c-w>k<c-w>
 
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{SL('fugitive#statusline')}%{SL('SyntasticStatuslineFlag')}%*%=%-14.(%l,%c%V%)\ %P
-
+"Powerline settings
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+set laststatus=2
