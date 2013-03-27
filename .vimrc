@@ -9,6 +9,7 @@ set directory=/Users/sharkins/tmp
 set nobackup
 set nowritebackup
 
+"Colorscheme settings
 set background=dark
 colorscheme solarized
 highlight clear SignColumn
@@ -42,6 +43,9 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 "Syntastic settings
 let g:syntastic_enable_signs=1
 let g:syntastic_disabled_filetypes = ['cpp']
+let g:syntastic_check_on_open=1
+nnoremap <leader>e :Error<cr>
+ 
 
 " Statusline helper
 if has("eval")
@@ -53,6 +57,12 @@ function! SL(function)
   endif
 endfunction
 endif
+
+"Split navigation keys
+nmap <c-h> <c-w>h<c-w>
+nmap <c-l> <c-w>l<c-w>
+nmap <c-j> <c-w>j<c-w>
+nmap <c-k> <c-w>k<c-w>
 
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{SL('fugitive#statusline')}%{SL('SyntasticStatuslineFlag')}%*%=%-14.(%l,%c%V%)\ %P
 
