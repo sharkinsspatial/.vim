@@ -1,7 +1,22 @@
+let g:pathogen_disabled = ['snipmate']
 call pathogen#incubate()
 call pathogen#helptags()
 syntax on
 filetype plugin indent on
+
+set t_Co=256
+set vb
+set nocompatible
+set showmatch
+set ruler
+set number
+set nowrap
+set hlsearch
+set colorcolumn=80
+set tabstop=4
+set shiftwidth=4
+set autoindent
+set expandtab
 
 "never write temp files into directories
 set backupdir=/Users/sharkins/tmp
