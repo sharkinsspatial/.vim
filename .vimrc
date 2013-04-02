@@ -45,18 +45,6 @@ let g:syntastic_enable_signs=1
 let g:syntastic_disabled_filetypes = ['cpp']
 let g:syntastic_check_on_open=1
 nnoremap <leader>e :Error<cr>
- 
-
-" Statusline helper
-if has("eval")
-function! SL(function)
-  if exists('*'.a:function)
-    return call(a:function,[])
-  else
-    return ''
-  endif
-endfunction
-endif
 
 "Split navigation keys
 nmap <c-h> <c-w>h<c-w>
@@ -67,3 +55,6 @@ nmap <c-k> <c-w>k<c-w>
 "Powerline settings
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 set laststatus=2
+
+"Tagbar
+nmap <F8> :TagbarToggle<CR>
