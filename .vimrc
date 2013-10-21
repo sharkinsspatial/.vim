@@ -1,4 +1,3 @@
-let g:pathogen_disabled = ['snipmate']
 call pathogen#incubate()
 call pathogen#helptags()
 syntax on
@@ -17,6 +16,7 @@ set tabstop=4
 set shiftwidth=4
 set autoindent
 set expandtab
+set clipboard=unnamed
 
 "never write temp files into directories
 set backupdir=/Users/sharkins/tmp
@@ -27,14 +27,14 @@ set nowritebackup
 "Colorscheme settings
 set background=dark
 colorscheme solarized
-highlight clear SignColumn
 
 if has("gui_running")
   set go-=T
   set guifont=Monaco\ for\ Powerline:h14
   set noballooneval
-else
   set mouse=a
+else
+    colorscheme default
 endif
 
 "Nerdtree configurations
