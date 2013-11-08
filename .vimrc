@@ -17,6 +17,8 @@ set shiftwidth=4
 set autoindent
 set expandtab
 set clipboard=unnamed
+set splitbelow
+set splitright
 
 "never write temp files into directories
 set backupdir=/Users/sharkins/tmp
