@@ -75,3 +75,4 @@ set laststatus=2
 
 "Tagbar
 nmap <F8> :TagbarToggle<CR>
+com! FormatJSON %!python -m json.tool
