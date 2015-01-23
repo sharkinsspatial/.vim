@@ -76,3 +76,10 @@ set laststatus=2
 "Tagbar
 nmap <F8> :TagbarToggle<CR>
 com! FormatJSON %!python -m json.tool
+
+"Pencil writing plugin
+augroup pencil
+  autocmd!
+  autocmd FileType markdown,mkd call pencil#init()
+  autocmd FileType text         call pencil#init()
+augroup END
