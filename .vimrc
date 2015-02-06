@@ -61,6 +61,8 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 let g:syntastic_enable_signs=1
 let g:syntastic_disabled_filetypes = ['cpp']
 let g:syntastic_check_on_open=1
+let g:syntastic_javascript_checkers = ['jsxhint']
+let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
 nnoremap <leader>e :Error<cr>
 
 "Split navigation keys
@@ -75,6 +77,8 @@ set laststatus=2
 
 "Tagbar
 nmap <F8> :TagbarToggle<CR>
+
+"Json formatter
 com! FormatJSON %!python -m json.tool
 
 "Pencil writing plugin
@@ -83,3 +87,4 @@ augroup pencil
   autocmd FileType markdown,mkd call pencil#init()
   autocmd FileType text         call pencil#init()
 augroup END
+
