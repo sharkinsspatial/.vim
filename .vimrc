@@ -63,7 +63,10 @@ let g:syntastic_disabled_filetypes = ['cpp']
 let g:syntastic_check_on_open=1
 let g:syntastic_javascript_checkers = ['jsxhint']
 let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
+let g:syntastic_json_checkers=['jsonlint']
 nnoremap <leader>e :Error<cr>
+"Sets json filetype explicitly so as not to interfere with jsxhint
+au BufRead,BufNewFile *.json set filetype=json
 
 "Split navigation keys
 nmap <c-h> <c-w>h<c-w>
