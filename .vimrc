@@ -19,6 +19,7 @@ set expandtab
 set clipboard=unnamed
 set splitbelow
 set splitright
+set textwidth=80
 
 "never write temp files into directories
 set backupdir=/Users/sharkins/tmp
@@ -87,7 +88,6 @@ com! FormatJSON %!python -m json.tool
 "Pencil writing plugin
 augroup pencil
   autocmd!
-  autocmd FileType markdown,mkd call pencil#init()
   autocmd FileType text         call pencil#init()
 augroup END
 
