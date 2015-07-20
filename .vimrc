@@ -76,8 +76,9 @@ nmap <c-j> <c-w>j<c-w>
 nmap <c-k> <c-w>k<c-w>
 
 "Powerline settings
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+"set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 set laststatus=2
+let g:airline_powerline_fonts = 1
 
 "Tagbar
 nmap <F8> :TagbarToggle<CR>
