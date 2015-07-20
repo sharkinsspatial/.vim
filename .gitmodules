@@ -1,3 +1,9 @@
+[submodule "bundle/ag"]
+    path = bundle/ag
+    url = https://github.com/rking/ag.vim 
+[submodule "bundle/gist-vim"]
+    path = bundle/gist-vim
+    url = https://github.com/mattn/gist-vim
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
@@ -7,9 +13,6 @@
 [submodule "bundle/vim-colors-solarized"]
 	path = bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
-[submodule "bundle/nerdtree"]
-	path = bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
 [submodule "bundle/neocomplcache"]
 	path = bundle/neocomplcache
 	url = https://github.com/Shougo/neocomplcache.git
@@ -25,3 +28,15 @@
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "bundle/vim-fugitive"]
+    path = bundle/vim-fugitive
+    url = https://github.com/tpope/vim-fugitive
+[submodule "bundle/vim-pencil"]
+    path = bundle/vim-pencil
+    url = https://github.com/reedes/vim-pencil 
+[submodule "bundle/vim-sensible"]
+    path = bundle/vim-sensible
+    url = https://github.com/tpope/vim-sensible
+[submodule "bundle/vim-surround"]
+    path = bundle/vim-surround
+    url = https://github.com/tpope/vim-surround
