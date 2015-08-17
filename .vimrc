@@ -65,6 +65,8 @@ let g:syntastic_check_on_open=1
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_json_checkers=['jsonlint']
 nnoremap <leader>e :Error<cr>
+let g:syntastic_always_populate_loc_list = 1
+
 "Sets json filetype explicitly so as not to interfere with jsxhint
 au BufRead,BufNewFile *.json set filetype=json
 
