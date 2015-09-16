@@ -93,3 +93,6 @@ augroup pencil
   autocmd FileType text         call pencil#init()
 augroup END
 
+" search for visually hightlighted text
+vnoremap <c-f> y<ESC>/<c-r>"<CR>   
+
