@@ -25,9 +25,6 @@
 [submodule "bundle/vim-fugitive"]
     path = bundle/vim-fugitive
     url = https://github.com/tpope/vim-fugitive
-[submodule "bundle/vim-pencil"]
-    path = bundle/vim-pencil
-    url = https://github.com/reedes/vim-pencil 
 [submodule "bundle/vim-sensible"]
     path = bundle/vim-sensible
     url = https://github.com/tpope/vim-sensible
