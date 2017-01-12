@@ -87,12 +87,15 @@ nmap <F8> :TagbarToggle<CR>
 "Json formatter
 com! FormatJSON %!python -m json.tool
 
-"Pencil writing plugin
-augroup pencil
-  autocmd!
-  autocmd FileType text         call pencil#init()
-augroup END
+"Xml formatter
+com! FormatXML %!xmllint --format %
 
 " search for visually hightlighted text
-vnoremap <c-f> y<ESC>/<c-r>"<CR>   
+vnoremap <c-f> y<ESC>/<c-r>"<CR>
+
+"Fix ag.vim issue opening first search
+cnoremap ag Ag!
+
+"Disable folding except for vimdiff
+set nofoldenable
 
