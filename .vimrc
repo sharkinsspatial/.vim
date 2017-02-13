@@ -94,7 +94,7 @@ com! FormatXML %!xmllint --format %
 vnoremap <c-f> y<ESC>/<c-r>"<CR>
 
 "Fix ag.vim issue opening first search
-cnoremap ag Ag!
+ca Ag Ag!
 
 "Disable folding except for vimdiff
 set nofoldenable
