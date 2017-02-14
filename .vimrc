@@ -3,7 +3,6 @@ call pathogen#helptags()
 syntax on
 filetype plugin indent on
 
-set t_Co=256
 set vb
 set nocompatible
 set showmatch
@@ -36,8 +35,6 @@ if has("gui_running")
   set guifont=Monaco\ for\ Powerline:h14
   set noballooneval
   set mouse=a
-else
-    colorscheme default
 endif
 
 "Nerdtree configurations
