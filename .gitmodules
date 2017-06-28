@@ -52,3 +52,6 @@
 [submodule "bundle/vim-tmux-navigator"]
 	path = bundle/vim-tmux-navigator
 	url = https://github.com/christoomey/vim-tmux-navigator
+[submodule "bundle/deoplete.nvim"]
+	path = bundle/deoplete.nvim
+	url = https://github.com/Shougo/deoplete.nvim

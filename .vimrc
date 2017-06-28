@@ -11,8 +11,8 @@ set number
 set nowrap
 set hlsearch
 set colorcolumn=80
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set autoindent
 set expandtab
 set clipboard=unnamed
@@ -52,8 +52,10 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
-let g:neocomplcache_enable_at_startup = 1
+"let g:neocomplcache_enable_at_startup = 1
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#file#enable_buffer_path = 1
 
 "Syntastic settings
 let g:syntastic_enable_signs=1
@@ -63,6 +65,7 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_json_checkers=['jsonlint']
 nnoremap <leader>e :Error<cr>
 let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_html_tidy_ignore_errors=['proprietary attribute "ng-']
 
 "Sets json filetype explicitly so as not to interfere with jsxhint
 au BufRead,BufNewFile *.json set filetype=json
@@ -95,4 +98,8 @@ ca Ag Ag!
 
 "Disable folding except for vimdiff
 set nofoldenable
+
+"Remap Neovim return to Normal mode.
+:tnoremap <Esc> <C-\><C-n>
+
 
