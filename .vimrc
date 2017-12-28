@@ -32,7 +32,7 @@ colorscheme solarized
 
 if has("gui_running")
   set go-=T
-  set guifont=Monaco\ for\ Powerline:h14
+  set guifont=Monaco\ for\ Powerline:h16
   set noballooneval
   set mouse=a
 endif
@@ -61,7 +61,11 @@ let g:deoplete#file#enable_buffer_path = 1
 let g:syntastic_enable_signs=1
 let g:syntastic_disabled_filetypes = ['cpp']
 let g:syntastic_check_on_open=1
+
+let g:syntastic_javascript_eslint_exec = 'yarn'
+let g:syntastic_javascript_eslint_exe = '$(npm bin)/eslint'
 let g:syntastic_javascript_checkers = ['eslint']
+
 let g:syntastic_json_checkers=['jsonlint']
 nnoremap <leader>e :Error<cr>
 let g:syntastic_always_populate_loc_list = 1
@@ -100,6 +104,8 @@ ca Ag Ag!
 set nofoldenable
 
 "Remap Neovim return to Normal mode.
-:tnoremap <Esc> <C-\><C-n>
-
+if has('nvim')
+  :tnoremap <Esc> <C-\><C-n>
+  au VimEnter * vsplit | term
+endif
 

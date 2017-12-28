@@ -43,9 +43,6 @@
 [submodule "bundle/vim-unimpaired"]
 	path = bundle/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired
-[submodule "bundle/syntastic-local-eslint.vim"]
-	path = bundle/syntastic-local-eslint.vim
-	url = https://github.com/mtscout6/syntastic-local-eslint.vim
 [submodule "bundle/editorconfig-vim"]
 	path = bundle/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim
