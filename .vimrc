@@ -38,12 +38,22 @@ if has("gui_running")
 endif
 
 "Nerdtree configurations
-nnoremap <leader>d :NERDTreeToggle<cr>
+"nnoremap <leader>d :NERDTreeToggle %<cr>
 let NERDTreeDirArrows=1
 let NERDTreeMinimalUI=1
 let NERDTreeIgnore=['\.pyc$', 'CVS', '\~$']
 let NERDTreeHijackNetrw=1
 let NERDTreeQuitOnOpen = 0
+" Open NERDTree in the directory of the current file (or /home if no file is open)
+nmap <leader>d :call NERDTreeToggleInCurDir()<cr>
+function! NERDTreeToggleInCurDir()
+  " If NERDTree is open in the current buffer
+  if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
+    exe ":NERDTreeClose"
+  else
+    exe ":NERDTreeFind"
+  endif
+endfunction
 
 "Autocomplete settings
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -103,9 +113,12 @@ ca Ag Ag!
 "Disable folding except for vimdiff
 set nofoldenable
 
-"Remap Neovim return to Normal mode.
 if has('nvim')
+  "Remap Neovim return to Normal mode.
   :tnoremap <Esc> <C-\><C-n>
+  "Open terminal split on start.
   au VimEnter * vsplit | term
+  "Prevent nested nvim sessions with neovim-remote.
+  let $VISUAL = 'nvr -cc split --remote-wait'
 endif
 
