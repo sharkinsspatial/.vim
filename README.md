@@ -9,3 +9,5 @@ Uses ESLint for JS and React linting see [here](https://github.com/jaxbot/syntas
 
 Uses deoplete.vim for autocomplete and requires Python3 and Python Neovim
 module see [here](https://github.com/Shougo/deoplete.nvim).
+
+Open new Neovim sessions using `nvr` to prevent nested terminals using [neovim-remote](https://github.com/mhinz/neovim-remote).
