@@ -42,7 +42,6 @@ endif
 let NERDTreeDirArrows=1
 let NERDTreeMinimalUI=1
 let NERDTreeIgnore=['\.pyc$', 'CVS', '\~$']
-let NERDTreeHijackNetrw=1
 let NERDTreeQuitOnOpen = 0
 " Open NERDTree in the directory of the current file (or /home if no file is open)
 nmap <leader>d :call NERDTreeToggleInCurDir()<cr>
@@ -116,9 +115,13 @@ set nofoldenable
 if has('nvim')
   "Remap Neovim return to Normal mode.
   :tnoremap <Esc> <C-\><C-n>
+
   "Open terminal split on start.
   au VimEnter * vsplit | term
+  
   "Prevent nested nvim sessions with neovim-remote.
-  let $VISUAL = 'nvr -cc split --remote-wait'
+  "let $VISUAL = 'nvr -cc split --remote-wait'
+  
+  command Term split | term 
 endif
 
