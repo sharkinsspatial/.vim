@@ -52,3 +52,9 @@
 [submodule "bundle/deoplete.nvim"]
 	path = bundle/deoplete.nvim
 	url = https://github.com/Shougo/deoplete.nvim
+[submodule "bundle/syntastic-local-tslint"]
+	path = bundle/syntastic-local-tslint
+	url = https://github.com/alessioalex/syntastic-local-tslint.vim
+[submodule "bundle/typescript-vim"]
+	path = bundle/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim.git

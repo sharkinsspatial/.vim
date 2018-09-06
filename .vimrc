@@ -76,6 +76,8 @@ let g:syntastic_javascript_eslint_exe = '$(npm bin)/eslint'
 let g:syntastic_javascript_checkers = ['eslint']
 
 let g:syntastic_json_checkers=['jsonlint']
+
+let g:syntastic_typescript_checkers = ['tslint']
 nnoremap <leader>e :Error<cr>
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_html_tidy_ignore_errors=['proprietary attribute "ng-']
@@ -118,10 +120,10 @@ if has('nvim')
 
   "Open terminal split on start.
   au VimEnter * vsplit | term
-  
+
   "Prevent nested nvim sessions with neovim-remote.
   "let $VISUAL = 'nvr -cc split --remote-wait'
-  
-  command Term split | term 
+
+  command Term split | term
 endif
 
