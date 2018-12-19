@@ -77,13 +77,17 @@ let g:syntastic_javascript_checkers = ['eslint']
 
 let g:syntastic_json_checkers=['jsonlint']
 
-let g:syntastic_typescript_checkers = ['tslint']
 nnoremap <leader>e :Error<cr>
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_html_tidy_ignore_errors=['proprietary attribute "ng-']
 
+let g:tsuquyomi_disable_quickfix = 1
+let g:syntastic_typescript_tsc_fname = ''
+let g:syntastic_typescript_checkers = ['tsuquyomi','tslint']
+
 "Sets json filetype explicitly so as not to interfere with jsxhint
 au BufRead,BufNewFile *.json set filetype=json
+
 
 "Split navigation keys
 nmap <c-h> <c-w>h<c-w>
@@ -116,14 +120,17 @@ set nofoldenable
 
 if has('nvim')
   "Remap Neovim return to Normal mode.
-  :tnoremap <Esc> <C-\><C-n>
+  :tnoremap <ESC> <C-\><C-n>
 
   "Open terminal split on start.
-  au VimEnter * vsplit | term
+  au VimEnter * vsplit | set nonumber | term
 
   "Prevent nested nvim sessions with neovim-remote.
   "let $VISUAL = 'nvr -cc split --remote-wait'
+  command Term split | set nonumber | term
 
-  command Term split | term
+  "Show cursor location in Term
+  hi! link TermCursor Cursor
+  hi TermCursorNC ctermfg=235 ctermbg=242 guifg=#002b36 guibg=#586e75 guisp=NONE cterm=NONE gui=NONE
 endif
 
