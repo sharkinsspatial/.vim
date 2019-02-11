@@ -1,4 +1,4 @@
-call pathogen#incubate()
+call pathogen#infect()
 call pathogen#helptags()
 syntax on
 filetype plugin indent on
@@ -21,8 +21,7 @@ set splitright
 set textwidth=80
 
 "never write temp files into directories
-set backupdir=/Users/sharkins/tmp
-set directory=/Users/sharkins/tmp
+set noswapfile
 set nobackup
 set nowritebackup
 
