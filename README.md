@@ -11,6 +11,7 @@ Uses ESLint for JS and React linting see [here](https://github.com/jaxbot/syntas
 
 Uses deoplete.vim for autocomplete and requires Python3 and Python Neovim
 module see [here](https://github.com/Shougo/deoplete.nvim).
+JS completion for deoplete requires Ternjs.
 
 After installing Neovim navigate to ` ~/.config/nvim/init.vim` and add
 ```
