@@ -38,7 +38,8 @@ endif
 
 "Nerdtree configurations
 "nnoremap <leader>d :NERDTreeToggle %<cr>
-let NERDTreeDirArrows=1
+"Fixes neovim regression.
+highlight NERDTreeFile ctermfg=251
 let NERDTreeMinimalUI=1
 let NERDTreeIgnore=['\.pyc$', 'CVS', '\~$']
 let NERDTreeQuitOnOpen = 0
