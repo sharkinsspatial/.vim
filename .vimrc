@@ -54,14 +54,18 @@ function! NERDTreeToggleInCurDir()
   endif
 endfunction
 
+" Add spaces for comments
+let g:NERDSpaceDelims = 2
+
 "Autocomplete settings
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+" autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
-"let g:neocomplcache_enable_at_startup = 1
+" let g:neocomplcache_enable_at_startup = 1
+let g:python_host_prog  = '~/.pyenv/versions/3.6.4/bin/python'
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#file#enable_buffer_path = 1
 
@@ -86,10 +90,11 @@ let g:syntastic_html_tidy_ignore_errors=['proprietary attribute "ng-']
 let g:tsuquyomi_disable_quickfix = 1
 let g:syntastic_typescript_tsc_fname = ''
 let g:syntastic_typescript_checkers = ['tsuquyomi','tslint']
+let g:syntastic_yaml_checkers = ['yamllint']
+let g:syntastic_cloudformation_checkers = ['cfn_lint']
 
 "Sets json filetype explicitly so as not to interfere with jsxhint
 au BufRead,BufNewFile *.json set filetype=json
-
 
 "Split navigation keys
 nmap <c-h> <c-w>h<c-w>
@@ -120,19 +125,19 @@ ca Ag Ag!
 "Disable folding except for vimdiff
 set nofoldenable
 
-if has('nvim')
-  "Remap Neovim return to Normal mode.
-  :tnoremap <ESC> <C-\><C-n>
+" if has('nvim')
+  " "Remap Neovim return to Normal mode.
+  " :tnoremap <ESC> <C-\><C-n>
 
-  "Open terminal split on start.
-  au VimEnter * vsplit | set nonumber | term
+  " "Open terminal split on start.
+  " au VimEnter * vsplit | set nonumber | term
 
-  "Prevent nested nvim sessions with neovim-remote.
-  "let $VISUAL = 'nvr -cc split --remote-wait'
-  command Term split | set nonumber | term
+  " "Prevent nested nvim sessions with neovim-remote.
+  " "let $VISUAL = 'nvr -cc split --remote-wait'
+  " command Term split | set nonumber | term
 
-  "Show cursor location in Term
-  hi! link TermCursor Cursor
-  hi TermCursorNC ctermfg=235 ctermbg=242 guifg=#002b36 guibg=#586e75 guisp=NONE cterm=NONE gui=NONE
-endif
-
+  " "Show cursor location in Term
+  " hi! link TermCursor Cursor
+  " hi TermCursorNC ctermfg=235 ctermbg=242 guifg=#002b36 guibg=#586e75 guisp=NONE cterm=NONE gui=NONE
+" endif
+let g:jedi#goto_command = "<leader>f"

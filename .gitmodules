@@ -43,21 +43,15 @@
 [submodule "bundle/editorconfig-vim"]
 	path = bundle/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim
-[submodule "bundle/vim-tmux-navigator"]
-	path = bundle/vim-tmux-navigator
-	url = https://github.com/christoomey/vim-tmux-navigator
-[submodule "bundle/deoplete.nvim"]
-	path = bundle/deoplete.nvim
-	url = https://github.com/Shougo/deoplete.nvim
 [submodule "bundle/syntastic-local-tslint"]
 	path = bundle/syntastic-local-tslint
 	url = https://github.com/alessioalex/syntastic-local-tslint.vim
 [submodule "bundle/typescript-vim"]
 	path = bundle/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim.git
-[submodule "bundle/deoplete"]
-	path = bundle/deoplete
-	url = https://github.com/Shougo/deoplete.nvim
-[submodule "bundle/deoplete-ternjs"]
-	path = bundle/deoplete-ternjs
-	url = https://github.com/carlitux/deoplete-ternjs
+[submodule "bundle/vim-cfn"]
+	path = bundle/vim-cfn
+	url = https://github.com/speshak/vim-cfn
+[submodule "bundle/vim-tmux-navigator"]
+	path = bundle/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator
