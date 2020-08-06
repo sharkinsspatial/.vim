@@ -2,16 +2,29 @@ My .vim
 
 Clone this repository into `~/.vim`.
 
-Uses Pathogen and git submodules to manage plugins.
-See [vimcasts](http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/).
+<!-- Uses Pathogen and git submodules to manage plugins. -->
+<!-- See [vimcasts](http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/). -->
 
 Requires the_silver_searcher and uses [ag.vim](https://github.com/rking/ag.vim).
 
-Uses ESLint for JS and React linting see [here](https://github.com/jaxbot/syntastic-react) for configuration.
+Requires the following plugins
 
-Uses deoplete.vim for autocomplete and requires Python3 and Python Neovim
-module see [here](https://github.com/Shougo/deoplete.nvim).
-JS completion for deoplete requires Ternjs.
+ag.vim
+LanguageClient-neovim
+ag.vim
+coc.nvim
+editorconfig-vim
+gist-vim
+nerdcommenter
+nerdtree
+typescript-vim
+vim-airline
+vim-colors-solarized
+vim-fugitive
+vim-python-pep8-indent
+vim-surround
+vim-tmux-navigator
+vim-unimpaired
 
 After installing Neovim navigate to ` ~/.config/nvim/init.vim` and add
 ```
