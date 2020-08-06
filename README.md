@@ -9,21 +9,21 @@ Requires the_silver_searcher and uses [ag.vim](https://github.com/rking/ag.vim).
 
 Requires the following plugins
 
-ag.vim
-LanguageClient-neovim
-ag.vim
-coc.nvim
-editorconfig-vim
-gist-vim
-nerdcommenter
-nerdtree
-typescript-vim
-vim-airline
-vim-colors-solarized
-vim-fugitive
-vim-python-pep8-indent
-vim-surround
-vim-tmux-navigator
+ag.vim \
+LanguageClient-neovim \
+ag.vim \
+coc.nvim \
+editorconfig-vim \
+gist-vim \
+nerdcommenter \
+nerdtree \
+typescript-vim \
+vim-airline \
+vim-colors-solarized \
+vim-fugitive \
+vim-python-pep8-indent \
+vim-surround \
+vim-tmux-navigator \
 vim-unimpaired
 
 After installing Neovim navigate to ` ~/.config/nvim/init.vim` and add
