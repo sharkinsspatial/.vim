@@ -1,99 +1,66 @@
-call pathogen#infect()
-call pathogen#helptags()
-syntax on
-filetype plugin indent on
+<p align="center">
+  <a href="https://www.vim.org/scripts/script.php?script_id=5779">
+    <img alt="Coc Logo" src="https://user-images.githubusercontent.com/251450/55009068-f4ed2780-501c-11e9-9a3b-cf3aa6ab9272.png" height="160" />
+  </a>
+  <p align="center">Make your Vim/Neovim as smart as VSCode.</p>
+  <p align="center">
+    <a href="/LICENSE.md"><img alt="Software License" src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square"></a>
+    <a href="https://salt.bountysource.com/teams/coc-nvim"><img alt="Bountysource" src="https://img.shields.io/bountysource/team/coc-nvim/activity.svg?style=flat-square"></a>
+    <a href="https://travis-ci.org/neoclide/coc.nvim"><img alt="Travis" src="https://img.shields.io/travis/neoclide/coc.nvim/master.svg?style=flat-square"></a>
+    <a href="https://codecov.io/gh/neoclide/coc.nvim"><img alt="Coverage" src="https://img.shields.io/codecov/c/github/neoclide/coc.nvim.svg?style=flat-square"></a>
+    <a href="/doc/coc.txt"><img alt="Doc" src="https://img.shields.io/badge/doc-%3Ah%20coc.txt-red.svg?style=flat-square"></a>
+    <a href="https://gitter.im/neoclide/coc.nvim"><img alt="Gitter" src="https://img.shields.io/gitter/room/neoclide/coc.nvim.svg?style=flat-square"></a>
+  </p>
+</p>
 
-set vb
-set nocompatible
-set showmatch
-set ruler
-set number
-set nowrap
-set hlsearch
-set colorcolumn=80
-set tabstop=2
-set shiftwidth=2
-set autoindent
-set expandtab
-set clipboard=unnamed
-set splitbelow
-set splitright
-set textwidth=80
+---
 
-"never write temp files into directories
-set noswapfile
-set nobackup
-set nowritebackup
+Coc is an intellisense engine for Vim/Neovim.
 
-"Colorscheme settings
-set background=dark
-colorscheme solarized
+<img alt="Gif" src="https://user-images.githubusercontent.com/251450/55285193-400a9000-53b9-11e9-8cff-ffe4983c5947.gif" width="60%" />
 
-if has("gui_running")
-  set go-=T
-  set guifont=Monaco\ for\ Powerline:h16
-  set noballooneval
-  set mouse=a
-endif
+_True snippet and additional text editing support_
 
-"Nerdtree configurations
-"nnoremap <leader>d :NERDTreeToggle %<cr>
-"Fixes neovim regression.
-highlight NERDTreeFile ctermfg=251
-let NERDTreeMinimalUI=1
-let NERDTreeIgnore=['\.pyc$', 'CVS', '\~$']
-let NERDTreeQuitOnOpen = 0
-" Open NERDTree in the directory of the current file (or /home if no file is open)
-nmap <leader>d :call NERDTreeToggleInCurDir()<cr>
-function! NERDTreeToggleInCurDir()
-  " If NERDTree is open in the current buffer
-  if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
-    exe ":NERDTreeClose"
-  else
-    exe ":NERDTreeFind"
-  endif
-endfunction
+Check out [Wiki](https://github.com/neoclide/coc.nvim/wiki), or [doc/coc.txt](doc/coc.txt) for the vim interface.
 
-" Add spaces for comments
-let g:NERDSpaceDelims = 2
+## Quick Start
 
-"Wrap settings for Markdown
-autocmd FileType markdown setlocal textwidth=0 wrapmargin=0 wrap
+Install [nodejs](https://nodejs.org/en/download/) when necessary:
 
-"Sets json filetype explicitly so as not to interfere with jsxhint
-au BufRead,BufNewFile *.json set filetype=json
+```sh
+curl -sL install-node.now.sh/lts | bash
+```
 
-"Split navigation keys
-nmap <c-h> <c-w>h<c-w>
-nmap <c-l> <c-w>l<c-w>
-nmap <c-j> <c-w>j<c-w>
-nmap <c-k> <c-w>k<c-w>
+For [vim-plug](https://github.com/junegunn/vim-plug) users:
 
-"Powerline settings
-"set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-set laststatus=2
-let g:airline_powerline_fonts = 1
+```vim
+" Use release branch (Recommend)
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-"Tagbar
-nmap <F8> :TagbarToggle<CR>
+" Or build from source code by use yarn: https://yarnpkg.com
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+```
 
-"Json formatter
-com! FormatJSON %!python -m json.tool
+in your `.vimrc` or `init.vim`, then restart vim and run `:PlugInstall`. Checkout [Install coc.nvim](https://github.com/neoclide/coc.nvim/wiki/Install-coc.nvim) wiki for more info.
 
-"Xml formatter
-com! FormatXML %!xmllint --format %
+**Note**: The first time building from source code may be slow.
 
-" search for visually hightlighted text
-vnoremap <c-f> y<ESC>/<c-r>"<CR>
+## Example vim configuration
 
-"Fix ag.vim issue opening first search
-ca Ag Ag!
+Configuration is required to make coc.nvim easier to work with, since it doesn't
+change your key-mappings or vim options. This is done as much as possible to avoid conflict with your
+other plugins.
 
-"Disable folding except for vimdiff
-set nofoldenable
+**❗️Important**: some vim plugins could change keymappings. Use a command like
+`:verbose imap <tab>` to make sure that your keymap has taken effect.
 
+```vim
 " if hidden is not set, TextEdit might fail.
 set hidden
+
+" Some servers have issues with backup files, see #649
+set nobackup
+set nowritebackup
 
 " Better display for messages
 set cmdheight=2
@@ -197,7 +164,7 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
-" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Using CocList
 " Show all diagnostics
@@ -216,5 +183,32 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+```
 
-autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+## Articles
+
+- [coc.nvim 插件体系介绍](https://zhuanlan.zhihu.com/p/65524706)
+- [CocList 入坑指南](https://zhuanlan.zhihu.com/p/71846145)
+- [Create coc.nvim extension to improve vim experience](https://medium.com/@chemzqm/create-coc-nvim-extension-to-improve-vim-experience-4461df269173)
+
+## Trouble shooting
+
+Try these steps when you have problem with coc.nvim.
+
+- Make sure your vim version >= 8.0 by command `:version`.
+- If service failed to start, use command `:CocInfo` or `:checkhealth` on neovim.
+- Checkout the log of coc.nvim by command `:CocOpenLog`.
+- When you have issue with a languageserver, it's recommended to [checkout the output](https://github.com/neoclide/coc.nvim/wiki/Debug-language-server#using-output-channel)
+
+## Feedback
+
+- If you think Coc is useful, consider giving it a star.
+- If you have a question, [ask on gitter](https://gitter.im/neoclide/coc.nvim)
+- 中文用户请到 [中文 gitter](https://gitter.im/neoclide/coc-cn) 讨论
+- If something is not working, [create an issue](https://github.com/neoclide/coc.nvim/issues/new).
+
+<img src="https://user-images.githubusercontent.com/251450/57566955-fb850200-7404-11e9-960f-711673f1a461.png" width="593" height="574">
+
+## License
+
+MIT
