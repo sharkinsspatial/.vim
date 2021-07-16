@@ -213,3 +213,9 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+
+let g:coc_global_extensions = [
+  \'coc-python',
+  \'coc-json',
+  \'coc-sh'
+\]
