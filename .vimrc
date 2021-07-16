@@ -60,8 +60,6 @@ let g:NERDSpaceDelims = 2
 "Wrap settings for Markdown
 autocmd FileType markdown setlocal textwidth=0 wrapmargin=0 wrap
 
-"Sets json filetype explicitly so as not to interfere with jsxhint
-au BufRead,BufNewFile *.json set filetype=json
 
 "Split navigation keys
 nmap <c-h> <c-w>h<c-w>
@@ -69,13 +67,10 @@ nmap <c-l> <c-w>l<c-w>
 nmap <c-j> <c-w>j<c-w>
 nmap <c-k> <c-w>k<c-w>
 
-"Powerline settings
-"set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-set laststatus=2
-let g:airline_powerline_fonts = 1
+let g:airline_theme='solarized'
 
-"Tagbar
-nmap <F8> :TagbarToggle<CR>
+"Open Fugitive diff in vertical splits
+" set diffopt+=vertical
 
 "Json formatter
 com! FormatJSON %!python -m json.tool
@@ -218,3 +213,9 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+
+let g:coc_global_extensions = [
+  \'coc-python',
+  \'coc-json',
+  \'coc-sh'
+\]
